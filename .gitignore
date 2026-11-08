@@ -23,3 +23,6 @@ $RECYCLE.BIN/
 *.log
 *.tmp
 *.bak
+
+# Print files (business cards etc.): working files, not part of the website
+/print/
