@@ -4,13 +4,13 @@
     <meta charset="utf-8"/>
     <title>Portfolio | Louis Kessler</title>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="Hörproben und Videos von Louis Kessler: Werbespots und Anime-Synchro zum Reinhören."
+    <meta content="Hörproben und Live-Lesungen von Louis Kessler: Werbespots zum Reinhören, Eindrücke von der Bühne."
           name="description" data-i18n-attr="content:portfolio.meta.desc">
     <!-- Preview for the client, not public yet -->
     <meta content="noindex, nofollow" name="robots">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Louis Kessler | Portfolio">
-    <meta property="og:description" content="Hörproben und Anime-Synchro von Louis Kessler.">
+    <meta property="og:description" content="Hörproben und Live-Lesungen von Louis Kessler.">
     <meta property="og:image" content="https://voiceoflouis.com/assets/img/louis-og.jpg">
     <meta property="og:url" content="https://voiceoflouis.com/portfolio/">
     <link href="../assets/img/favicon.svg" rel="icon" type="image/svg+xml">
@@ -40,7 +40,7 @@
         <div class="wrap">
             <span class="sticker">Portfolio</span>
             <h1 data-i18n="portfolio.title">Hör rein. Schau rein.</h1>
-            <p class="lead" data-i18n="portfolio.lead">Hier findest du meine Hörproben und Videos. Drück auf Play und hör selbst, wie viel in einer Stimme steckt.</p>
+            <p class="lead" data-i18n="portfolio.lead">Hier findest du meine Hörproben und Eindrücke von der Bühne. Drück auf Play und hör selbst, wie viel in einer Stimme steckt.</p>
         </div>
     </section>
 
@@ -103,54 +103,33 @@
 
     <div class="ticker" aria-hidden="true">
         <div class="ticker-track">
-            <span data-i18n="ticker.1">Werbespots</span><span data-i18n="ticker.2">Anime-Synchro</span><span data-i18n="ticker.3">Zeichentrick</span><span data-i18n="ticker.4">Games</span><span data-i18n="ticker.5">Charakterstimmen</span><span data-i18n="ticker.6">Erklärvideos</span>
+            <span data-i18n="ticker.1">Werbespots</span><span data-i18n="ticker.2">Live-Lesungen</span><span data-i18n="ticker.3">Zeichentrick</span><span data-i18n="ticker.4">Games</span><span data-i18n="ticker.5">Charakterstimmen</span><span data-i18n="ticker.6">Erklärvideos</span>
         </div>
     </div>
 
-    <!--
-      Videos: self-hosted MP4s in assets/video/ (data-video), or YouTube (data-youtube="VIDEO_ID",
-      loads only after a click). Each <video> has a poster frame (x-poster.webp) and loads nothing until clicked.
-    -->
-    <section class="section" id="video">
-        <div class="wrap stack" style="gap:48px">
+    <!-- Live script reading: two square stage photos as an overlapping collage, text beside them -->
+    <section class="section" id="live">
+        <div class="wrap reading">
+            <div class="collage">
+                <div class="photo collage-back">
+                    <img src="../assets/img/reading2-800.webp"
+                         srcset="../assets/img/reading2-480.webp 480w, ../assets/img/reading2-800.webp 800w"
+                         sizes="(max-width: 900px) 70vw, 400px" width="800" height="800"
+                         alt="Die Bühne der Drehbuchlesung, aus dem Publikum gesehen"
+                         data-i18n-attr="alt:portfolio.reading.alt2" loading="lazy">
+                </div>
+                <div class="photo collage-front">
+                    <img src="../assets/img/reading1-800.webp"
+                         srcset="../assets/img/reading1-480.webp 480w, ../assets/img/reading1-800.webp 800w"
+                         sizes="(max-width: 900px) 50vw, 290px" width="800" height="800"
+                         alt="Louis Kessler liest bei einer Live-Lesung am Mikrofon aus dem Drehbuch"
+                         data-i18n-attr="alt:portfolio.reading.alt1" loading="lazy">
+                </div>
+                <span class="sticker live" data-i18n="portfolio.reading.sticker">Live auf der Bühne</span>
+            </div>
             <div class="stack">
-                <h2 data-i18n="portfolio.video.title">Anime-Synchro</h2>
-                <p class="lead" data-i18n="portfolio.video.lead">Zwei Kultserien, komplett verschiedene Energien, eine Stimme. Meine Synchro-Proben aus Fullmetal Alchemist und Jujutsu Kaisen.</p>
-            </div>
-            <div class="videos">
-                <article class="video">
-                    <div class="video-frame" data-video="../assets/video/edward.mp4">
-                        <video src="../assets/video/edward.mp4" poster="../assets/video/edward-poster.webp" preload="none" muted playsinline tabindex="-1" aria-hidden="true"></video>
-                        <button class="play" type="button" aria-label="Edward abspielen" data-i18n-attr="aria-label:portfolio.edward.play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg></button>
-                    </div>
-                    <div class="video-meta"><h3>Edward</h3><span class="sticker sun">Fullmetal Alchemist</span></div>
-                </article>
-                <article class="video">
-                    <div class="video-frame" data-video="../assets/video/gojo.mp4">
-                        <video src="../assets/video/gojo.mp4" poster="../assets/video/gojo-poster.webp" preload="none" muted playsinline tabindex="-1" aria-hidden="true"></video>
-                        <button class="play" type="button" aria-label="Gojo &amp; Geto abspielen" data-i18n-attr="aria-label:portfolio.gojo.play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg></button>
-                    </div>
-                    <div class="video-meta"><h3>Gojo &amp; Geto</h3><span class="sticker sky">Jujutsu Kaisen</span></div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Live-action film dubbing, kept apart from the anime clips -->
-    <section class="section film" id="film">
-        <div class="wrap stack" style="gap:48px">
-            <div class="stack">
-                <h2 data-i18n="portfolio.film.title">Film-Synchro</h2>
-                <p class="lead" data-i18n="portfolio.film.lead">Echte Schauspieler, echte Emotionen: meine Synchro-Probe zu einer Szene aus Don’t Worry Darling.</p>
-            </div>
-            <div class="videos">
-                <article class="video">
-                    <div class="video-frame" data-video="../assets/video/mein-leben.mp4">
-                        <video src="../assets/video/mein-leben.mp4" poster="../assets/video/mein-leben-poster.webp" preload="none" muted playsinline tabindex="-1" aria-hidden="true"></video>
-                        <button class="play" type="button" aria-label="Don’t Worry Darling abspielen" data-i18n-attr="aria-label:portfolio.film.play"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg></button>
-                    </div>
-                    <div class="video-meta"><h3>Don’t Worry Darling</h3><span class="sticker" data-i18n="portfolio.film.tag">Spielfilm</span></div>
-                </article>
+                <h2 data-i18n="portfolio.reading.title">Live-Lesung</h2>
+                <p class="lead" data-i18n="portfolio.reading.text">Ein Drehbuch, ein Publikum und kein zweiter Take. Bei Live-Lesungen bringe ich Figuren direkt vor Zuschauern zum Leben, nur mit Stimme und Timing.</p>
             </div>
         </div>
     </section>

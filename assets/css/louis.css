@@ -1157,7 +1157,90 @@ p {
     flex-wrap: wrap;
 }
 
-/* film dubbing: its own mint band, so it reads apart from the anime clips */
+/* ---------- live reading: two square photos as a taped-together collage ---------- */
+.reading {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    gap: clamp(40px, 7vw, 96px);
+    align-items: center;
+}
+
+.collage {
+    position: relative;
+    width: min(100%, 520px);
+    aspect-ratio: 1 / .92;
+    justify-self: center;
+}
+
+.collage .photo {
+    position: absolute;
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 30px;
+    animation: none;
+}
+
+/* the wide stage shot sits at the back, the close-up of Louis overlaps it in front */
+.collage-back {
+    top: 0;
+    left: 0;
+    width: 76%;
+    transform: rotate(-4deg);
+}
+
+.collage-front {
+    right: 0;
+    bottom: 0;
+    width: 54%;
+    z-index: 1;
+    transform: rotate(5deg);
+    box-shadow: 10px 10px 0 var(--orange);
+}
+
+.collage .sticker.live {
+    position: absolute;
+    z-index: 2;
+    left: 46%;
+    top: -14px;
+    transform: rotate(6deg);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* little "on air" lamp in front of the sticker text */
+.collage .sticker.live::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #e8352b;
+    box-shadow: 0 0 0 2px var(--ink);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .collage .sticker.live::before {
+        animation: onair 1.6s ease-in-out infinite;
+    }
+}
+
+@keyframes onair {
+    50% {
+        opacity: .35;
+    }
+}
+
+@media (max-width: 900px) {
+    .reading {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .collage {
+        width: min(100%, 440px);
+    }
+}
+
+/* film dubbing: its own mint band, so it reads apart from the sections around it */
 .film {
     background: var(--mint);
     border-block: var(--border);
@@ -1248,6 +1331,11 @@ p {
 .cta h2 {
     color: var(--sun);
     max-width: 16ch;
+}
+
+/* keep the sentence clear of the rings in the bottom-right corner */
+.cta p {
+    max-width: 44ch;
 }
 
 .cta .rings {
